@@ -1,6 +1,6 @@
 var contextMenu={
     "id":"test ",
-    "title": "Check for fake news",
+    "title": "Check for fact",
     "contexts":["selection"]
 };
 
