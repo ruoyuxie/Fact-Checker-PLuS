@@ -1,10 +1,28 @@
 {
-    "name": "CS-321 Extension",
-    "version": "0.0.1",
-    "description": "demo",
-    "manifest_version": 2,
-    "browser_action": {
-        "default_popup": "demo.html",
-        "default_icon": "logo.png"
+  "name": "CS-321 Extension",
+  "version": "0.0.1",
+  "description": "A fake news redirection extension that helps users to identify fake news",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "demo.html",
+    "default_icon": "logo.png"
+  },
+  "permissions": [
+    "storage",
+    "notifications",
+    "contextMenus",
+    "tabs"
+  ],
+  "icons": {
+    "16": "logo.png",
+    "48": "logo.png",
+    "128": "logo.png"
+  },
+    "background": {
+        "scripts": ["main.js"],
+          "persistent": false
     }
+
+
+
 }
