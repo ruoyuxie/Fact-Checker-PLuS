@@ -1,5 +1,5 @@
 var contextMenu={
-    "id":"test ",
+    "id":"test",
     "title": "Check for fact",
     "contexts":["selection"]
 };
@@ -9,11 +9,16 @@ chrome.runtime.onInstalled.addListener(() => {
     chrome.contextMenus.create(contextMenu);
 })
 
+console.log("here1")
+
 chrome.contextMenus.removeAll(function() {
+    console.log("here2")
     chrome.contextMenus.onClicked.addListener(function(clickData){
+        console.log("here3")
         if (clickData.menuItemId == "test" && clickData.selectionText){
+            console.log("here4")
             if (typeof clickData.selectionText === 'string' || clickData.selectionText instanceof String) {
-                
+                console.log("here5")
                 var unprocessed_text = clickData.selectionText
                 console.log("Unprocessed Text:")
                 console.log(unprocessed_text)
