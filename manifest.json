@@ -22,7 +22,4 @@
         "scripts": ["main.js"],
           "persistent": false
     }
-
-
-
 }
