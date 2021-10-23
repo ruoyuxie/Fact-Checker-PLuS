@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Fact Check Here</title>
+    <script src="jquery-3.1.0.min.js"></script>
+    <script src="popup.js"></script>
+    <style>
+        .button {
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .button1 {
+            background-color: white;
+            color: black;
+            border: 2px solid #4CAF50;
+        }
+
+        .button1:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        input[type=text] {
+            margin: 4px 2px;
+            padding: 5px 10px;
+            border: none;
+            border-bottom: 2px solid #4CAF50;
+        }
+
+    </style>
+</head>
+
+<body>
+<h3 id="check">text stores here for now..</h3>
+<input id="fact" type="text" placeholder="Enter a fact here to check"/>
+<input id="action" type="submit" class="button button1" value="check"/>
+
+</body>
+</html>

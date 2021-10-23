@@ -1,8 +1,16 @@
 $(function () {
-    $("#btnsave").click(function () {
-        var name = $("#txt_name").val();
+    // $('#fact').keyup(function () {
+    //     $('#check').text('Check for ' + $('#fact').val())
+    // });
 
-       alert("Hi"+" "+name);
+    $('#action').click(function () {
+        var data = document.getElementById("fact").value;
 
+       // chrome.notifications.create('limitNotify', data);
+
+          $('#fact').val('');
+          $('#check').text('text received: ' + data);
     });
+
+
 });
