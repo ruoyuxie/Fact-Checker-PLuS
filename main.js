@@ -9,7 +9,6 @@ chrome.runtime.onInstalled.addListener(() => {
     chrome.contextMenus.create(contextMenu);
 })
 
-
 chrome.contextMenus.removeAll(function() {
     chrome.contextMenus.onClicked.addListener(function(clickData){
         if (clickData.menuItemId == "test" && clickData.selectionText){
