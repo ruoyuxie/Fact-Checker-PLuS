@@ -1,7 +1,7 @@
 import requests
 
 # Get input params
-API_KEY = input("Enter API key:")
+API_KEY = "AIzaSyA7FGpJIKd1p0lleUbwmm_9v7yic031pBk"
 query = input("Enter search phrase:")
 
 # Set up request
