@@ -46,7 +46,13 @@ chrome.contextMenus.removeAll(function() {
 
                 console.log("Processed Sentences:")
                 console.log(processed_sentences)
+
+                chrome.tabs.create({'url': chrome.extension.getURL('results.html')}, function(tab) {
+                    // Tab opened.
+                });
             }
         }
     })
 });
+
+
