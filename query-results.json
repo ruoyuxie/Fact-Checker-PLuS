@@ -1,0 +1,181 @@
+{
+  "claims": [
+    {
+      "text": "“Trump has been reinstated.”",
+      "claimant": "Facebook posts",
+      "claimDate": "2021-10-26T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "PolitiFact",
+            "site": "politifact.com"
+          },
+          "url": "https://www.politifact.com/factchecks/2021/oct/26/facebook-posts/no-trump-has-not-been-reinstated/",
+          "title": "No, Trump has not been reinstated",
+          "textualRating": "Pants on Fire",
+          "languageCode": "en"
+        }
+      ]
+    },
+    {
+      "text": "Joe Biden said Donald Trump was still US president in speech",
+      "claimant": "Multiple sources",
+      "claimDate": "2021-10-23T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "AFP Fact Check",
+            "site": "factcheck.afp.com"
+          },
+          "url": "https://factcheck.afp.com/http%253A%252F%252Fdoc.afp.com%252F9QG79T-1",
+          "reviewDate": "2021-10-28T03:24:00Z",
+          "textualRating": "Missing context",
+          "languageCode": "en"
+        }
+      ]
+    },
+    {
+      "text": "Image shows Donald Trump statement calling Alec Baldwin a 'total loser'",
+      "claimant": "Social media users",
+      "claimDate": "2021-10-27T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "USA Today",
+            "site": "usatoday.com"
+          },
+          "url": "https://www.usatoday.com/story/news/factcheck/2021/10/30/fact-check-trump-didnt-call-alec-baldwin-total-loser-statement/6211437001/",
+          "title": "Fact check: Trump didn't call Alec Baldwin 'total loser' in statement",
+          "reviewDate": "2021-10-30T19:23:47Z",
+          "textualRating": "Altered",
+          "languageCode": "en"
+        }
+      ]
+    },
+    {
+      "text": "Donald Trump will be reinstated as president in August",
+      "claimant": "Social media user",
+      "claimDate": "2021-07-18T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "USA Today",
+            "site": "usatoday.com"
+          },
+          "url": "https://www.usatoday.com/story/news/factcheck/2021/07/23/fact-check-trump-not-reinstated-president-august/8060880002/",
+          "title": "Fact check: False claim persists online that Trump will be reinstated ...",
+          "reviewDate": "2021-07-23T19:47:13Z",
+          "textualRating": "False",
+          "languageCode": "en"
+        }
+      ]
+    },
+    {
+      "text": "Says Donald Trump said, “Alec Baldwin, a total loser, has taken his impression of me to a new low by testing out this theory” by shooting someone.",
+      "claimant": "Viral image",
+      "claimDate": "2021-10-27T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "PolitiFact",
+            "site": "politifact.com"
+          },
+          "url": "https://www.politifact.com/factchecks/2021/oct/28/viral-image/fake-donald-trump-statement-about-alec-baldwin-spr/",
+          "title": "Fake Donald Trump statement about Alec Baldwin spreads online",
+          "textualRating": "False",
+          "languageCode": "en"
+        }
+      ]
+    },
+    {
+      "text": "A photo shows Donald Trump embracing a man that who lost both of his arms",
+      "claimant": "Social media users",
+      "claimDate": "2021-07-21T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "USA Today",
+            "site": "usatoday.com"
+          },
+          "url": "https://www.usatoday.com/story/news/factcheck/2021/07/27/fact-check-man-2016-photo-donald-trump-born-without-arms/8060719002/",
+          "title": "Fact check: Man photographed with Donald Trump in 2016 was born ...",
+          "reviewDate": "2021-07-27T18:06:37Z",
+          "textualRating": "False",
+          "languageCode": "en"
+        }
+      ]
+    },
+    {
+      "text": "Joe Biden was arrested and the military met in secret to make Donald Trump president",
+      "claimant": "Social media users",
+      "claimDate": "2021-07-26T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "USA Today",
+            "site": "usatoday.com"
+          },
+          "url": "https://www.usatoday.com/story/news/factcheck/2021/07/27/fact-check-biden-wasnt-arrested-trump-wont-become-president/5386986001/",
+          "title": "Fact check: Biden wasn't arrested; Trump won't become president",
+          "reviewDate": "2021-07-27T22:14:19Z",
+          "textualRating": "False",
+          "languageCode": "en"
+        }
+      ]
+    },
+    {
+      "text": "President Joe Biden withdrew troops from Afghanistan “simply because of Trump Derangement Syndrome and they wanted to reverse any policy that Trump had implemented.”",
+      "claimant": "Facebook posts",
+      "claimDate": "2021-10-27T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "PolitiFact",
+            "site": "politifact.com"
+          },
+          "url": "https://www.politifact.com/factchecks/2021/oct/28/facebook-posts/posts-falsely-say-joe-biden-broke-donald-trump-afg/",
+          "title": "Posts falsely say Joe Biden broke with Donald Trump on ...",
+          "textualRating": "False",
+          "languageCode": "en"
+        }
+      ]
+    },
+    {
+      "text": "\"We also got tax cuts — the largest tax cut and reform in the history of our country, by far.\"",
+      "claimant": "Donald Trump",
+      "claimDate": "2021-01-20T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "PolitiFact",
+            "site": "politifact.com"
+          },
+          "url": "https://www.politifact.com/article/2021/jan/20/one-last-time-president-fact-checking-donald-trump/",
+          "title": "One last time (as president): Fact-checking Donald Trump's ...",
+          "reviewDate": "2021-01-20T23:08:25Z",
+          "textualRating": "Wrong, for the umpteenth time",
+          "languageCode": "en"
+        }
+      ]
+    },
+    {
+      "text": "\"One of the things we're very, very proud of is the selection of almost 300 federal judges and 3 great Supreme Court justices. That's a very big number. That's a record-setting number.\"",
+      "claimant": "Donald Trump",
+      "claimDate": "2021-01-20T00:00:00Z",
+      "claimReview": [
+        {
+          "publisher": {
+            "name": "PolitiFact",
+            "site": "politifact.com"
+          },
+          "url": "https://www.politifact.com/article/2021/jan/20/one-last-time-president-fact-checking-donald-trump/",
+          "title": "One last time (as president): Fact-checking Donald Trump's ...",
+          "reviewDate": "2021-01-20T23:08:25Z",
+          "textualRating": "Exaggerates the number",
+          "languageCode": "en"
+        }
+      ]
+    }
+  ],
+  "nextPageToken": "CAo"
+}
