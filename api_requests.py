@@ -9,10 +9,15 @@ myparams = {
     "key": API_KEY,
     "query": query
 }
+proxies = {
+    "http": "http://127.0.0.1:51388",
+    "https": "http://127.0.0.1:51388"
+}
 url = 'https://factchecktools.googleapis.com/v1alpha1/claims:search'
 # Make request
 r = requests.get(
-    url, params=myparams, timeout=5)
+    url, params=myparams, proxies=proxies, timeout=5)
+print(r.url)
 
 # Store response as a json file
 with open("query-results.json", "w", encoding="utf-8") as f:
