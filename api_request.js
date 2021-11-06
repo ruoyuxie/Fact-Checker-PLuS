@@ -26,6 +26,7 @@ async function getAPIRequest(apiKey) {
                 method: 'GET',
                 mode: 'no-cors'
             });
+        console.log(response.url);
         return await response.json();
     } catch (err) {
         console.error(err);
