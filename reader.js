@@ -1,8 +1,4 @@
-fetch("./query-results.json")
-    .then(function (resp) {
-        return resp.json();
-    })
-    .then(function (data) {
+    function readResults(results){
         var dataClaims = data.claims
         var dataClaim1Text = data.claims[0].text
         var dataClaim1Claimant = data.claims[0].claimant
@@ -30,4 +26,4 @@ fetch("./query-results.json")
         console.log(dataClaim1URL);
 
 
-    });
+    };
