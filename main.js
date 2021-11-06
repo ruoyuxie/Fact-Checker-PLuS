@@ -48,10 +48,10 @@ chrome.contextMenus.onClicked.addListener(function (clickData) {
 
             // API call
             queryResults = makeAPIRequest(processed_sentences[0])
-            queryResults.then(results => console.log(results))
             chrome.tabs.create({ 'url': chrome.extension.getURL('results.html') }, function (tab) {
                 // Tab opened.
             });
+            readResults(queryResults)
         }
     }
 });

@@ -1,4 +1,6 @@
-    function readResults(results){
+function readResults(results) {
+    results.then(data => {
+        console.log(data)
         var dataClaims = data.claims
         var dataClaim1Text = data.claims[0].text
         var dataClaim1Claimant = data.claims[0].claimant
@@ -24,6 +26,8 @@
         console.log(dataClaim1TextualRating);
         console.log(dataClaim1Title);
         console.log(dataClaim1URL);
+    })
 
 
-    };
+
+};
