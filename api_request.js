@@ -1,33 +1,37 @@
 // Reads API key from local text file
 async function readAPIkey(file) {
     try {
-        let resp = await fetch(file)
-            .then(response => response.text())
-            .then(textString => {
-                return textString;
+        let text = await fetch(file)
+            .then(response => {
+                return response.text();
             });
-        return resp
+        console.log(text);
     } catch (err) {
         console.error(err);
         // Handle errors here
     }
-    return resp
 }
 
 
 // Send Google API request
 async function getAPIRequest(apiKey) {
     try {
-        let response = await fetch('https://factchecktools.googleapis.com/v1alpha1/claims:search?' + new URLSearchParams({
-            'key': apiKey,
-            'query': 'Kim Kardashian is married.'
-        }),
+        // Set up URL
+        var url = new URL('https://factchecktools.googleapis.com/v1alpha1/claims:search?');
+        url.searchParams.append('key', apiKey);
+        url.searchParams.append('query', "The covid vaccine does not work.");
+
+        // Send query
+        console.log(url);
+        let result = await fetch(url,
             {
                 method: 'GET',
-                mode: 'no-cors'
+                mode: 'cors'
+            })
+            .then(response => {
+                return response.json();
             });
-        console.log(response.url);
-        return await response.json();
+        console.log(result);
     } catch (err) {
         console.error(err);
         // Handle errors here
@@ -35,8 +39,7 @@ async function getAPIRequest(apiKey) {
 }
 
 // Get the api key from text file
-var apiKey = readAPIkey("api_key.txt");
-apiKey.then(resp => console.log(resp));
+// var apiKey = readAPIkey('api_key.txt');
 
 // Query the result
-apiKey.then(resp => console.log(getAPIRequest(resp)))
+var result = getAPIRequest('AIzaSyA7FGpJIKd1p0lleUbwmm_9v7yic031pBk');
