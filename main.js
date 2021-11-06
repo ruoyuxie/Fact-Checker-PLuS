@@ -9,7 +9,6 @@ chrome.runtime.onInstalled.addListener(() => {
     chrome.contextMenus.create(contextMenu);
 })
 
-
 chrome.contextMenus.removeAll(function() {
     chrome.contextMenus.onClicked.addListener(function(clickData){
         if (clickData.menuItemId == "test" && clickData.selectionText){
@@ -46,7 +45,13 @@ chrome.contextMenus.removeAll(function() {
 
                 console.log("Processed Sentences:")
                 console.log(processed_sentences)
+
+                chrome.tabs.create({'url': chrome.extension.getURL('results.html')}, function(tab) {
+                    // Tab opened.
+                });
             }
         }
     })
 });
+
+

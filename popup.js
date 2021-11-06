@@ -1,16 +1,26 @@
-console.log("hello world")
 $(function () {
-    // $('#fact').keyup(function () {
-    //     $('#check').text('Check for ' + $('#fact').val())
-    // });
-    console.log("here")
+    $('#fact').keyup(function () {
+        $('#check').text('Check for ' + $('#fact').val())
+        temp = document.getElementById("fact").value;
+    });
     $('#action').click(function () {
-        var data = document.getElementById("fact").value;
-
-       // chrome.notifications.create('limitNotify', data);
-       console.log("data")
-       console.log(data)
-          $('#fact').val('');
-          $('#check').text('text received: ' + data);
+        getInput();
     });
 });
+
+function getInput() {
+    var data = document.getElementById("fact").value;
+    $('#fact').val('');
+    $('#check').text('text received: ' + data);
+    alert(data)
+}
+
+//displaying the results
+fetch("./example.json")
+    .then(function(resp)
+    {
+        return resp.json();
+    })
+    .then(function(data){
+        console.log(data.title);
+    });
