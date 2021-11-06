@@ -53,5 +53,3 @@ chrome.contextMenus.removeAll(function() {
         }
     })
 });
-
-
