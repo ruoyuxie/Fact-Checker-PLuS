@@ -1,4 +1,6 @@
     function readResults(results){
+        var data = results
+        
         var dataClaims = data.claims
         var dataClaim1Text = data.claims[0].text
         var dataClaim1Claimant = data.claims[0].claimant
