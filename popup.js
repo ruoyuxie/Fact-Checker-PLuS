@@ -12,7 +12,9 @@ function getInput() {
     var data = document.getElementById("fact").value;
     $('#fact').val('');
     $('#check').text('text received: ' + data);
-    alert(data)
+    //alert(data)
+    chrome.tabs.create({'url': chrome.extension.getURL('results.html')}, function(tab) {});
+
 }
 
 //displaying the results
