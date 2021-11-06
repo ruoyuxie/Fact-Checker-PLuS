@@ -5,7 +5,7 @@ async function readAPIkey(file) {
             .then(response => {
                 return response.text();
             });
-        console.log(text);
+        return text;
     } catch (err) {
         console.error(err);
         // Handle errors here
@@ -14,15 +14,14 @@ async function readAPIkey(file) {
 
 
 // Send Google API request
-async function getAPIRequest(apiKey) {
+async function getAPIRequest(apiKey, query) {
     try {
         // Set up URL
         var url = new URL('https://factchecktools.googleapis.com/v1alpha1/claims:search?');
         url.searchParams.append('key', apiKey);
-        url.searchParams.append('query', "The covid vaccine does not work.");
+        url.searchParams.append('query', query);
 
         // Send query
-        console.log(url);
         let result = await fetch(url,
             {
                 method: 'GET',
@@ -31,15 +30,24 @@ async function getAPIRequest(apiKey) {
             .then(response => {
                 return response.json();
             });
-        console.log(result);
+        return result;
     } catch (err) {
         console.error(err);
         // Handle errors here
     }
 }
 
-// Get the api key from text file
-// var apiKey = readAPIkey('api_key.txt');
-
-// Query the result
-var result = getAPIRequest('AIzaSyA7FGpJIKd1p0lleUbwmm_9v7yic031pBk');
+// Make API request
+async function makeAPIRequest(query) {
+    try {
+        let queryResults = await readAPIkey('./api_key.txt')
+            .then(key => getAPIRequest(key, query))
+            .then(result => {
+                return result;
+            });
+        return queryResults
+    }
+    catch (err) {
+        console.error(err);
+    }
+}
