@@ -11,8 +11,7 @@
     "storage",
     "notifications",
     "contextMenus",
-    "tabs",
-    "activeTab"
+    "tabs"
   ],
   "icons": {
     "16": "logo.png",

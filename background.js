@@ -49,8 +49,18 @@ chrome.contextMenus.onClicked.addListener(function (clickData) {
             // API call
             queryResults = makeAPIRequest(processed_sentences[0])
             
-            readResults(queryResults)
-            
+            chrome.tabs.create({ 'url': chrome.extension.getURL('results.html') }, function (tab) {
+                // Tab opened.
+                console.log("document from within background")
+                console.log(document)
+                chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
+                    if(tab.url.indexOf('results.html') != -1 && changeInfo.status == 'complete') {
+                        console.log("THIS IS ENFURIEATINGGGGDS")
+                        console.log(tab)
+                        readResults(queryResults)
+                    }
+                })
+            });
         }
     }
 });
