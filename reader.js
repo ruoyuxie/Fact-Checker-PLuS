@@ -3,6 +3,7 @@ fetch("./query-results.json")
         return resp.json();
     })
     .then(function (data) {
+        console.log(document)
         var dataClaim1Text = data.claims[0].text
         var dataClaim1Claimant = data.claims[0].claimant
         var dataClaim1Publisher = data.claims[0].claimReview[0].publisher.name
