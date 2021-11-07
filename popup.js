@@ -16,13 +16,3 @@ function getInput() {
     chrome.tabs.create({'url': chrome.extension.getURL('results.html')}, function(tab) {});
 
 }
-
-//displaying the results
-fetch("./example.json")
-    .then(function(resp)
-    {
-        return resp.json();
-    })
-    .then(function(data){
-        console.log(data.title);
-    });
