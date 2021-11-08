@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Fact Check Results</title>
+    <script src="jquery-3.1.0.min.js"></script>
+        <script src="popup.js"></script>
+
+    <script src="background.js"></script>
+
+    <style>
+        .title{
+            width: 100%;
+        }
+        h1 {
+            margin: 30px 0px 30px 0px;
+            text-align: center;
+            font-size: 36px;
+        }
+        h2 {
+            margin: 0px 0px 30px 0px;
+            text-align: center;
+            font-size: 25px;
+        }
+        .results {
+            border-radius: 10px;
+            margin: 0px 200px 0px 200px;
+            background-color: #e0e9eb;
+            padding: 20px 20px 20px 20px;
+        }
+        .claim {
+            width: 90%;
+            display: block;
+            margin: 40px auto 40px auto;
+            padding: 10px 10px 10px 10px;
+            border: 5px solid #cddde0;
+            border-radius: 10px;
+        }
+        .share {
+            min-height: 200px;
+            border-radius: 10px;
+            margin: 20px 200px 20px 200px;
+            background-color: #b4d9e6;
+            padding: 20px 20px 20px 20px;
+        }
+        p {
+            display: inline-block;
+            margin: 0px 0px 0px 0px;
+            font-weight: 400;
+        }
+        .claimText {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .publisher {
+            font-weight: 700;
+        }
+        a {
+            text-decoration: none;
+            color: #0021ee;
+        }
+        a:hover{
+            text-decoration: underline;
+            color: #2843f5;
+        }
+        b {
+            color: rgb(199, 58, 58);
+        }
+        .inputText {
+            width: 100%;
+            color: black;
+            text-align: center;
+            font-size: 20px;
+        }
+        .inputTextText {
+            font-weight: 700;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        .emailShare {
+            display: block;
+            margin: 0px auto 0px auto;
+            width: 100px;
+            height: 100px;
+            border-radius: 20px;
+        }
+        .emailShare:hover {
+            background-color: #c2eefd;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="title">
+        <h1> Fact Check Results </h1>
+    </div>
+
+    <div class="results">
+        <h2> Top 3 </h2>
+        <div class="inputText">
+            <p class = "inputTextText">Input text: </p> <p id="inputText" ></p>
+        </div>
+        <div class="claim">
+            <div class="claimText">
+                Claim: <p id="dataClaim1Text"></p>
+            </div>
+            <div class="claimText">
+                Claimant: <p id="dataClaim1Claimant"></p>
+            </div>
+            <div class="claimText">
+                <p class = "publisher" id="dataClaim1Publisher"></p> Rating: 
+                <b id="dataClaim1TextualRating"></b>
+            </div>
+            <div class="claimText">
+                Article title: <p id="dataClaim1Title"></p>
+            </div>
+            <div class="claimText">
+                <a id="dataClaim1URL" href= "#" target="_blank" rel="noreferrer"> 
+                    Click here to learn more &#8594
+                </a>
+            </div>
+        </div>
+    
+        <div class="claim">
+            <div class="claimText">
+                Claim: <p id="dataClaim2Text"></p>
+            </div>
+            <div class="claimText">
+                Claimant: <p id="dataClaim2Claimant"></p>
+            </div>
+            <div class="claimText">
+                <p class = "publisher" id="dataClaim2Publisher"></p> Rating: 
+                <b id="dataClaim2TextualRating"></b>
+            </div>
+            <div class="claimText">
+                Article title: <p id="dataClaim2Title"></p>
+            </div>
+            <div class="claimText">
+                <a id="dataClaim2URL" href= "#" target="_blank" rel="noreferrer"> 
+                    Click here to learn more &#8594
+                </a>
+            </div>
+        </div>
+
+        <div class="claim">
+            <div class="claimText">
+                Claim: <p id="dataClaim3Text"></p>
+            </div>
+            <div class="claimText">
+                Claimant: <p id="dataClaim3Claimant"></p>
+            </div>
+            <div class="claimText">
+                <p class = "publisher" id="dataClaim3Publisher"></p> Rating: 
+                <b id="dataClaim3TextualRating"></b>
+            </div>
+            <div class="claimText">
+                Article title: <p id="dataClaim3Title"></p>
+            </div>
+            <div class="claimText">
+                <a id="dataClaim3URL" href= "#" target="_blank" rel="noreferrer"> 
+                    Click here to learn more &#8594
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="share">
+        <h2> Share with a friend! </h2>
+        <a id="dataClaimMailTo" class = "emailShare" href="#">
+            <img src="email.png" alt="email icon" />
+        </a>
+    </div>
+</body>
+</html>

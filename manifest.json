@@ -18,10 +18,13 @@
     "48": "logo.png",
     "128": "logo.png"
   },
-    "background": {
-        "scripts": ["main.js"],
-          "persistent": false
-    }
-
+  "background": {
+    "scripts": [
+      "jquery-3.1.0.min.js",
+      "background.js",
+      "popup.js",
+      "api_request.js"
+    ],
+    "persistent": false
+  }
 }
-
