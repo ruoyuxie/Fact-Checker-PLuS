@@ -49,17 +49,25 @@ chrome.contextMenus.onClicked.addListener(function (clickData) {
 
             console.log("Processed Sentences:")
             console.log(processed_sentences)
-            
+            chrome.storage.local.set({"Input": processed_sentences[0]}, function() {
+                console.log('Input Value is set to: ')
+                console.log(queryResults)
+            });
             // API call
             queryResults = makeAPIRequest(processed_sentences[0])
             queryResults.then(function (data) {
-                chrome.storage.local.set({"Data": data}, function() {
-                    console.log('Value is set to: ');
-                    console.log(queryResults)
-                    chrome.tabs.create({ 'url': chrome.extension.getURL('results.html') }, function (tab) {
-                        // Tab opened.
+                if(data.claims) {
+                    chrome.storage.local.set({"Data": data}, function() {
+                        console.log('Value is set to: ')
+                        console.log(queryResults)
+                        chrome.tabs.create({ 'url': chrome.extension.getURL('results.html') }, function (tab) {
+                            // Tab opened.
+                        });
                     });
-                });
+                }
+                else {
+                    console.log("No results from API")
+                }
             });
         }
     }
@@ -67,7 +75,10 @@ chrome.contextMenus.onClicked.addListener(function (clickData) {
 
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
     if(tab.url.indexOf('results.html') != -1 && changeInfo.status == 'complete') {
-        chrome.storage.local.get(['Data'], function(query) {
+        chrome.storage.local.get(['Data','Input'], function(query) {
+            var inputText = query.Input
+            document.getElementById("inputText").innerHTML = inputText
+
             var data = query.Data
             console.log("(inside tab listener) Value is now: ")
             console.log(data.Data)
@@ -112,6 +123,13 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
             document.getElementById("dataClaim3TextualRating").innerHTML = dataClaim3TextualRating
             document.getElementById("dataClaim3Title").innerHTML = dataClaim3Title
             document.getElementById("dataClaim3URL").href=dataClaim3URL
+
+            var emailSubject = "Fact Check: " + inputText
+            var emailBody = "Top 3 Results:\n\nClaim1: "+dataClaim1Text 
+            var mailTo = "mailto:?subject=" + emailSubject + "&body=" + emailBody
+            document.getElementByID("mailTo").innerHTML = mailTo
+            console.log("MAIL TOOOOOO")
+            console.log(mailTo)
         });
     }
 })
