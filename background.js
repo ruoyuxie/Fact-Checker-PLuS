@@ -67,6 +67,9 @@ chrome.contextMenus.onClicked.addListener(function (clickData) {
                 }
                 else {
                     console.log("No results from API")
+                    chrome.tabs.create({ 'url': chrome.extension.getURL('noResults.html') }, function (tab) {
+                        // Tab opened.
+                    });
                 }
             });
         }
@@ -80,8 +83,6 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
             document.getElementById("inputText").innerHTML = inputText
 
             var data = query.Data
-            console.log("(inside tab listener) Value is now: ")
-            console.log(data.Data)
             var dataClaim1Text = data.claims[0].text
             var dataClaim1Claimant = data.claims[0].claimant
             var dataClaim1Publisher = data.claims[0].claimReview[0].publisher.name
@@ -127,9 +128,16 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
             var emailSubject = "Fact Check: " + inputText
             var emailBody = "Top 3 Results:\n\nClaim1: "+dataClaim1Text 
             var mailTo = "mailto:?subject=" + emailSubject + "&body=" + emailBody
-            document.getElementByID("mailTo").innerHTML = mailTo
-            console.log("MAIL TOOOOOO")
-            console.log(mailTo)
+            document.getElementByID("dataClaimMailTo").href = "google.com"
+        });
+    }
+})
+
+chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
+    if(tab.url.indexOf('noResults.html') != -1 && changeInfo.status == 'complete') {
+        chrome.storage.local.get(['Input'], function(query) {
+            var inputText = query.Input
+            document.getElementById("inputText").innerHTML = inputText
         });
     }
 })
