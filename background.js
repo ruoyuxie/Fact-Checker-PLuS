@@ -4,11 +4,15 @@ var contextMenu = {
     "contexts": ["selection"]
 };
 
+chrome.storage.local.set({"Query": "Nothin yet"}, function() {
+    console.log('Value is set to: ');
+    console.log("nothin yet")
+});
+
 // here is the test code for adding options on contextMenu.
 chrome.runtime.onInstalled.addListener(() => {
     chrome.contextMenus.create(contextMenu);
 })
-
 
 chrome.contextMenus.onClicked.addListener(function (clickData) {
     if (clickData.menuItemId == "test" && clickData.selectionText) {
@@ -48,21 +52,67 @@ chrome.contextMenus.onClicked.addListener(function (clickData) {
             
             // API call
             queryResults = makeAPIRequest(processed_sentences[0])
-            
-            chrome.tabs.create({ 'url': chrome.extension.getURL('results.html') }, function (tab) {
-                // Tab opened.
-                console.log("document from within background")
-                console.log(document)
-                chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
-                    if(tab.url.indexOf('results.html') != -1 && changeInfo.status == 'complete') {
-                        console.log("THIS IS ENFURIEATINGGGGDS")
-                        console.log(tab)
-                        readResults(queryResults)
-                    }
-                })
+            queryResults.then(function (data) {
+                chrome.storage.local.set({"Data": data}, function() {
+                    console.log('Value is set to: ');
+                    console.log(queryResults)
+                    chrome.tabs.create({ 'url': chrome.extension.getURL('results.html') }, function (tab) {
+                        // Tab opened.
+                    });
+                });
             });
         }
     }
 });
 
+chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
+    if(tab.url.indexOf('results.html') != -1 && changeInfo.status == 'complete') {
+        chrome.storage.local.get(['Data'], function(query) {
+            var data = query.Data
+            console.log("(inside tab listener) Value is now: ")
+            console.log(data.Data)
+            var dataClaim1Text = data.claims[0].text
+            var dataClaim1Claimant = data.claims[0].claimant
+            var dataClaim1Publisher = data.claims[0].claimReview[0].publisher.name
+            var dataClaim1TextualRating = data.claims[0].claimReview[0].textualRating
+            var dataClaim1Title = data.claims[0].claimReview[0].title
+            var dataClaim1URL = data.claims[0].claimReview[0].url
+
+            document.getElementById("dataClaim1Text").innerHTML = dataClaim1Text
+            document.getElementById("dataClaim1Claimant").innerHTML = dataClaim1Claimant
+            document.getElementById("dataClaim1Publisher").innerHTML = dataClaim1Publisher
+            document.getElementById("dataClaim1TextualRating").innerHTML = dataClaim1TextualRating
+            document.getElementById("dataClaim1Title").innerHTML = dataClaim1Title
+            document.getElementById("dataClaim1URL").href = dataClaim1URL
+
+            var dataClaim2Text = data.claims[1].text
+            var dataClaim2Claimant = data.claims[1].claimant
+            var dataClaim2Publisher = data.claims[1].claimReview[0].publisher.name
+            var dataClaim2TextualRating = data.claims[1].claimReview[0].textualRating
+            var dataClaim2Title = data.claims[1].claimReview[0].title
+            var dataClaim2URL = data.claims[1].claimReview[0].url
+
+            document.getElementById("dataClaim2Text").innerHTML = dataClaim2Text
+            document.getElementById("dataClaim2Claimant").innerHTML = dataClaim2Claimant
+            document.getElementById("dataClaim2Publisher").innerHTML = dataClaim2Publisher
+            document.getElementById("dataClaim2TextualRating").innerHTML = dataClaim2TextualRating
+            document.getElementById("dataClaim2Title").innerHTML = dataClaim2Title
+            document.getElementById("dataClaim2URL").href=dataClaim2URL
+
+            var dataClaim3Text = data.claims[2].text
+            var dataClaim3Claimant = data.claims[2].claimant
+            var dataClaim3Publisher = data.claims[2].claimReview[0].publisher.name
+            var dataClaim3TextualRating = data.claims[2].claimReview[0].textualRating
+            var dataClaim3Title = data.claims[2].claimReview[0].title
+            var dataClaim3URL = data.claims[2].claimReview[0].url
+
+            document.getElementById("dataClaim3Text").innerHTML = dataClaim3Text
+            document.getElementById("dataClaim3Claimant").innerHTML = dataClaim3Claimant
+            document.getElementById("dataClaim3Publisher").innerHTML = dataClaim3Publisher
+            document.getElementById("dataClaim3TextualRating").innerHTML = dataClaim3TextualRating
+            document.getElementById("dataClaim3Title").innerHTML = dataClaim3Title
+            document.getElementById("dataClaim3URL").href=dataClaim3URL
+        });
+    }
+})
 

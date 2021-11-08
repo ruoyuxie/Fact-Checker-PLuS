@@ -23,7 +23,6 @@
       "jquery-3.1.0.min.js",
       "background.js",
       "popup.js",
-      "reader.js",
       "api_request.js"
     ],
     "persistent": false
