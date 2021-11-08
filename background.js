@@ -125,11 +125,12 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
             document.getElementById("dataClaim3Title").innerHTML = dataClaim3Title
             document.getElementById("dataClaim3URL").href=dataClaim3URL
 
+            var div = "%0D%0A%0D%0A--------------------------------------------------------------------------------------------------------------------------------------------------------------------%0D%0A%0D%0A"
             var emailSubject = "Fact Check: " + inputText
-            var claim1Body = "%0D%0A%0D%0A%0D%0AClaim: "+dataClaim1Text+"%0D%0A%0D%0A%0D%0AClaimant: "+dataClaim1Claimant+"%0D%0A%0D%0A"+dataClaim1Publisher+" Rating: "+dataClaim1TextualRating+"%0D%0A%0D%0AArticle title: "+dataClaim1Title+"%0D%0A%0D%0AURL: "+dataClaim1URL
-            var claim2Body = "%0D%0A%0D%0A%0D%0AClaim: "+dataClaim2Text+"%0D%0A%0D%0A%0D%0AClaimant: "+dataClaim2Claimant+"%0D%0A%0D%0A"+dataClaim2Publisher+" Rating: "+dataClaim2TextualRating+"%0D%0A%0D%0AArticle title: "+dataClaim2Title+"%0D%0A%0D%0AURL: "+dataClaim2URL
-            var claim3Body = "%0D%0A%0D%0A%0D%0AClaim: "+dataClaim3Text+"%0D%0A%0D%0A%0D%0AClaimant: "+dataClaim3Claimant+"%0D%0A%0D%0A"+dataClaim3Publisher+" Rating: "+dataClaim3TextualRating+"%0D%0A%0D%0AArticle title: "+dataClaim3Title+"%0D%0A%0D%0AURL: "+dataClaim3URL
-            var emailBody = "Top 3 Results" + claim1Body + claim2Body + claim3Body
+            var claim1Body = "Claim: "+dataClaim1Text+"%0D%0A%0D%0AClaimant: "+dataClaim1Claimant+"%0D%0A%0D%0A"+dataClaim1Publisher+" Rating: "+dataClaim1TextualRating+"%0D%0A%0D%0AArticle title: "+dataClaim1Title+"%0D%0A%0D%0AURL: "+dataClaim1URL+div
+            var claim2Body = "Claim: "+dataClaim2Text+"%0D%0A%0D%0AClaimant: "+dataClaim2Claimant+"%0D%0A%0D%0A"+dataClaim2Publisher+" Rating: "+dataClaim2TextualRating+"%0D%0A%0D%0AArticle title: "+dataClaim2Title+"%0D%0A%0D%0AURL: "+dataClaim2URL+div
+            var claim3Body = "Claim: "+dataClaim3Text+"%0D%0A%0D%0AClaimant: "+dataClaim3Claimant+"%0D%0A%0D%0A"+dataClaim3Publisher+" Rating: "+dataClaim3TextualRating+"%0D%0A%0D%0AArticle title: "+dataClaim3Title+"%0D%0A%0D%0AURL: "+dataClaim3URL+div
+            var emailBody = "-------------- TOP 3 RESULTS --------------%0D%0A%0D%0A%0D%0A" + claim1Body + claim2Body + claim3Body
             var mailTo = "mailto:?subject=" + emailSubject + "&body=" + emailBody
             document.getElementById("dataClaimMailTo").href = mailTo
         });
