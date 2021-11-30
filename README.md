@@ -1,4 +1,4 @@
-# CS-321-Project
+# Fact Checker PLuS
 
 ## How to set up the extension
 1. Unzip the folder into anywhere
